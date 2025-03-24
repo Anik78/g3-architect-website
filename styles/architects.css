@@ -101,7 +101,7 @@ main>section{
     margin-left: 130px;
     max-width: 530px;
 }
-.feature-title{
+.section-title{
     font-size: 2.8rem;
     font-weight: 700;
 }
@@ -109,14 +109,74 @@ main>section{
 #quick-list{
     font-weight: 500;
 }
+/* some facts related styles */
+/* .fact-card{
+    border: 1px solid #ff900e;
+    width: 240px;
+    height: 240px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+} */
+.fact-card {
+    border: 2px solid #ff900e;
+    width: 240px;
+    min-height: 240px; /* Changed from fixed height */
+    border-radius: 8px;
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.facts-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
+}
+.fact-number{
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin: none;
+}
+.fact-name{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.fact-description{
+    max-width: 540px; 
+}
+
+/* sponsor-related info */
+.sponsor-info{
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+.sponsor-companies{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+.sponsor-companies img{
+    filter: grayscale(100%);
+}
 /* responsive media query */
 @media screen and (max-width: 576px){
     .navbar, .nav-links, .teams{
         flex-direction: column;
     }
-    .team-img-container{
+    .team-img-container, .facts-container, .sponsor-companies{
         grid-template-columns: repeat(1, 1fr);
+    }
+    .facts-container{
+        justify-items: center;
+        gap: 24px;
     }
     .our-features{
         margin-left: 20px;
@@ -124,5 +184,23 @@ main>section{
     .our-features{
         justify-content: center;
         align-items: center;
+    }
+    .sponsor-companies{
+        justify-items: center;
+        gap: 50px;
+    }
+}
+/* medium size query */
+@media screen and (min-width: 576px) and (max-width: 992px){
+    .teams{
+        flex-direction: column;
+    }
+    .our-features{
+        margin-left: 50px auto;
+    }
+    .sponsor-companies, .facts-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        justify-items: center;
     }
 }
